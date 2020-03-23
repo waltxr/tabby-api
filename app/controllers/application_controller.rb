@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
     render json: { error: 'not_found' }
   end
 
-  def authorize_request
+  def authorize_request        
     header = request.headers['Authorization']
     header = header.split(' ').last if header
     begin
