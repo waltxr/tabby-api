@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   # notes
   get '/notes', to: 'notes#index'
-  post '/notes', to: 'notes#create'
+  post '/notes/new', to: 'notes#create'
+  post '/notes/update', to: 'notes#update'
 
   # get '/*a', to: 'application#not_found'
 end

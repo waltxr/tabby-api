@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :authorize_request
+  before_action :set_note, only: [:update]
 
   def index
 
@@ -17,7 +18,18 @@ class NotesController < ApplicationController
     end
   end
 
+  def update
+    unless @note.update(note_params)
+      render json: { errors: @note.errors.full_messages},
+             status: :unprocessable_entity
+     end
+  end
+
   private
+
+  def set_note
+    @note = Note.find(params[:id])
+  end
 
   def note_params
     params.permit(:title, :body)
