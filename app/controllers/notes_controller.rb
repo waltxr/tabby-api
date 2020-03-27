@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :authorize_request
-  before_action :set_note, only: [:update]
+  before_action :set_note, only: [:update, :destroy]
 
   def index
 
@@ -23,6 +23,15 @@ class NotesController < ApplicationController
       render json: { errors: @note.errors.full_messages},
              status: :unprocessable_entity
      end
+  end
+
+  def destroy
+    if @note
+      @note.destroy
+      render json: { message: 'Note successfully deleted.' }, status: 200
+    else
+      render json: { error: 'Unable to delete note' }, status: 400
+    end
   end
 
   private

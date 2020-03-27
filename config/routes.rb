@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/notes', to: 'notes#index'
   post '/notes/new', to: 'notes#create'
   post '/notes/update', to: 'notes#update'
+  post '/notes/delete', to: 'notes#destroy'
 
   # get '/*a', to: 'application#not_found'
 end
