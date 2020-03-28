@@ -18,7 +18,7 @@ class NotesController < ApplicationController
     end
   end
 
-  def update
+  def update    
     unless @note.update(note_params)
       render json: { errors: @note.errors.full_messages},
              status: :unprocessable_entity
@@ -41,7 +41,7 @@ class NotesController < ApplicationController
   end
 
   def note_params
-    params.permit(:title, :body)
+    params.permit(:title, :body, :active, :id)
   end
 
 end
