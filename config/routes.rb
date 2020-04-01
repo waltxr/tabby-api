@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # authorization
   post '/auth/login', to: 'authentication#login'
+  post '/auth/signup', to: 'users#create'
 
   # notes
   get '/notes', to: 'notes#index'
