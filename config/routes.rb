@@ -10,5 +10,4 @@ Rails.application.routes.draw do
   post '/notes/update', to: 'notes#update'
   post '/notes/delete', to: 'notes#destroy'
 
-  # get '/*a', to: 'application#not_found'
 end

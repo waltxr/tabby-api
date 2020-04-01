@@ -22,6 +22,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'figaro'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -43,3 +45,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Added at 2020-03-29 17:37:24 -0400 by aiw392:
+gem "mysql2", "~> 0.5.3"
+
+# Added at 2020-03-29 17:37:48 -0400 by aiw392:
+gem "appengine", "~> 0.5.0"

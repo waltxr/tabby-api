@@ -18,3 +18,9 @@
 !/tmp/.keep
 
 .byebug_history
+
+app.yaml
+
+# Ignore application configuration
+/config/application.yml
+/config/database.yml
