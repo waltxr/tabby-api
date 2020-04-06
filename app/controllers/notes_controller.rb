@@ -3,7 +3,6 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:update, :destroy]
 
   def index
-
     @notes = @current_user.notes
     render json: @notes
   end
@@ -18,7 +17,7 @@ class NotesController < ApplicationController
     end
   end
 
-  def update    
+  def update
     unless @note.update(note_params)
       render json: { errors: @note.errors.full_messages},
              status: :unprocessable_entity
